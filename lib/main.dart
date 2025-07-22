@@ -16,24 +16,12 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: Scaffold(
+      
         appBar: AppBar(
           title: const Text('Learn Flutter'),
-          leading: Icon(Icons.login),
+          // leading: Icon(Icons.login),
         ),
-        floatingActionButton: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            FloatingActionButton(
-              onPressed: () => print('click'),
-              child: const Icon(Icons.add),
-            ),
-             SizedBox(height: 10),
-            FloatingActionButton(
-              onPressed: () => print('click'),
-              child: const Icon(Icons.add),
-            ),
-          ],
-        ),
+         
         bottomNavigationBar: NavigationBar(
           destinations: [
             NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
@@ -41,7 +29,7 @@ class MyApp extends StatelessWidget {
           ],
           onDestinationSelected: (value) => print(value),
         ),
-        body: const Center(child: Text('Hello World')),
+        body: const Center(child: Text('Hello World 2')),
       ),
     );
   }
