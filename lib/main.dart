@@ -20,11 +20,26 @@ class MyApp extends StatelessWidget {
           title: const Text('Learn Flutter'),
           leading: Icon(Icons.login),
         ),
+        floatingActionButton: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              onPressed: () => print('click'),
+              child: const Icon(Icons.add),
+            ),
+             SizedBox(height: 10),
+            FloatingActionButton(
+              onPressed: () => print('click'),
+              child: const Icon(Icons.add),
+            ),
+          ],
+        ),
         bottomNavigationBar: NavigationBar(
           destinations: [
             NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
             NavigationDestination(icon: Icon(Icons.person), label: 'user'),
           ],
+          onDestinationSelected: (value) => print(value),
         ),
         body: const Center(child: Text('Hello World')),
       ),
