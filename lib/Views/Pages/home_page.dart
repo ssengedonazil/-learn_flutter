@@ -10,8 +10,15 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
-        HeroWidget(),
-      ]),
+          HeroWidget(),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 20),
+            child: Card(
+              child: Padding(padding: EdgeInsets.all(20), child: Text("Card")),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
