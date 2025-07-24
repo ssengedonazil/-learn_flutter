@@ -28,7 +28,7 @@ String title = 'Learn Flutter';
               icon: Icon(Icons.settings),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context)  {
-                  return Settings(title: "Settings -",);
+                  return Settings(title: "Settings0",);
                 }));
               },
             ),

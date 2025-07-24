@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/Views/Pages/well_come.dart';
+import 'package:learn_flutter/data/notifiers.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -17,15 +18,23 @@ class _ProfilePageState extends State<ProfilePage> {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
-       children: [
-        ListTile(title: Text("Log out"),onTap: (){
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)  {
-                  return WellComePage();
-                }));
-        },),
-        
-       ],
-         ),
+        children: [
+          ListTile(
+            title: Text("Log out"),
+            onTap: () {
+              selectedPageNotifier.value = 0;
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return WellComePage();
+                  },
+                ),
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }
