@@ -35,6 +35,34 @@ class _SettingsState extends State<Settings> {
             },
             child: Text("Open Snackbar"),
           ),
+          ElevatedButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text("Dialog Title"),
+                    content: Text("alert Dialog"),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text("Cancel"),
+                      ),
+                      FilledButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text("Ok"),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            child: Text("Open Snackbar"),
+          ),
         ],
       ),
     );
