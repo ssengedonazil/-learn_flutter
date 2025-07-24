@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/Views/Pages/well_come.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -16,30 +17,15 @@ class _ProfilePageState extends State<ProfilePage> {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
-        children: [
-          TextField(
-            controller: controller,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Enter a search term',
-            ),
-            onEditingComplete: () {
-              setState(() {});
-            },
-          ),
-          Text(controller.text),
-          Checkbox(value: isChecked, onChanged: (value) {
-            setState(() {
-              isChecked = value;
-            });
-          }),
-          Switch(value: isSwitched, onChanged: (bool val){
-            setState(() {
-              isSwitched = val;
-            });
-          })
-        ],
-      ),
+       children: [
+        ListTile(title: Text("Log out"),onTap: (){
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)  {
+                  return WellComePage();
+                }));
+        },),
+        
+       ],
+         ),
     );
   }
 }

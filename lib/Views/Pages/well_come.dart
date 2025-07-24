@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/Views/Widgets/hero_widget.dart';
 import 'package:learn_flutter/Views/widget_tree.dart';
 
 class WellComePage extends StatefulWidget {
@@ -17,10 +18,7 @@ class _WellComePageState extends State<WellComePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(20.0),
-              child: Image.asset("assets/images/happy.png")//.asset('assets/images/happy.png')
-            ),
+           HeroWidget(),
             FilledButton(onPressed: (){
                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)  {
                   return WidgetTree();
