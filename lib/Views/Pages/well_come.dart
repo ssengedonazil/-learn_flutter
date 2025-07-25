@@ -18,12 +18,28 @@ class _WellComePageState extends State<WellComePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           HeroWidget(),
+            FittedBox(child: Text("Flutter App", style: TextStyle(letterSpacing: 50.0,fontSize: 40.0, fontWeight: FontWeight.bold),),
+            
+            ),
+          //  HeroWidget(),
             FilledButton(onPressed: (){
                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)  {
                   return WidgetTree();
                 }));
-            }, child: Text("Login"))
+            },
+            style: FilledButton.styleFrom(
+              minimumSize: Size(double.infinity, 40.0)
+            ),
+             child: Text("Get Started")),
+            TextButton(onPressed: (){
+                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)  {
+                  return WidgetTree();
+                }));
+            }, 
+             style: FilledButton.styleFrom(
+              minimumSize: Size(double.infinity, 40.0)
+            ),
+            child: Text("Login"))
         ],
         ),
       ),
