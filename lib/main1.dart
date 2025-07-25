@@ -68,19 +68,33 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Stack(
-          children: [
-            SizedBox(height: 300, child: Text("Flutter")),
-            ListTile(
-              leading: Icon(Icons.join_full),
-              tileColor: Colors.red,
-              title: Text("4374v"),
-              trailing: Text("hgfksjhdf s"),
-              onTap: () => {
-                print("jhzgchz ")
-              },
-            ),
-          ],
+        child: Container(
+          child: Column(
+            children: [
+              Container(
+                height: 100.0,
+                // height: double.infinity,
+                width: 100.0,
+                // margin: EdgeInsets.all(50.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Colors.red,
+                ),
+                child: Text("HELLO3", style: TextStyle(color: Colors.blue)),
+              ),
+              Container(
+                height: 100.0,
+                width: 100.0,
+
+                // margin: EdgeInsets.all(50.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Colors.red,
+                ),
+                child: Text("HELLO3", style: TextStyle(color: Colors.blue)),
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
