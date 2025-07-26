@@ -34,7 +34,7 @@ class _WellComePageState extends State<WellComePage> {
              child: Text("Get Started")),
 
             TextButton(onPressed: (){
-                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)  {
+                 Navigator.push(context, MaterialPageRoute(builder: (context)  {
                   return LoginWidget();
                 }));
             }, 

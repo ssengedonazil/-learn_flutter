@@ -13,7 +13,8 @@ class _LoginWidgetState extends State<LoginWidget> {
   @override
   TextEditingController pwd = TextEditingController();
   TextEditingController email = TextEditingController();
-
+  String ConfirmPassword = '123';
+  String ConfirmEmail = '123';
   void dispose() {
     super.dispose();
     pwd.dispose();
@@ -49,18 +50,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                 ),
               ),
             ),
-            FilledButton(
+            SizedBox(height: 20),
+            ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return WidgetTree();
-                    },
-                  ),
-                );
+                onLoginPressed();
               },
-              style: FilledButton.styleFrom(
+              style: ElevatedButton.styleFrom(
                 minimumSize: Size(double.infinity, 40.0),
               ),
               child: Text("Login"),
@@ -69,5 +64,30 @@ class _LoginWidgetState extends State<LoginWidget> {
         ),
       ),
     );
+  }
+
+  void onLoginPressed() {
+    if (ConfirmEmail == email.text && ConfirmPassword == pwd.text) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return WidgetTree();
+          },
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            "Invalid Credentials",
+            
+          ),
+          backgroundColor: Colors.red,
+          duration: Duration(seconds: 1),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }
   }
 }
