@@ -3,8 +3,9 @@ import 'package:learn_flutter/Views/Widgets/hero_widget.dart';
 import 'package:learn_flutter/Views/widget_tree.dart';
 
 class LoginWidget extends StatefulWidget {
-  const LoginWidget({super.key});
+  const LoginWidget({super.key, required this.title});
 
+  final String title;
   @override
   State<LoginWidget> createState() => _LoginWidgetState();
 }
@@ -25,42 +26,48 @@ class _LoginWidgetState extends State<LoginWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            HeroWidget(title: "Login"),
-            SizedBox(height: 20),
-            TextField(
-              controller: email,
-              decoration: InputDecoration(
-                hintText: "Enter your email",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                HeroWidget(title: widget.title),
+                SizedBox(height: 20),
+                TextField(
+                  controller: email,
+                  decoration: InputDecoration(
+                    hintText: "Enter your email",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: pwd,
-              decoration: InputDecoration(
-                hintText: "Enter your password ",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+                SizedBox(height: 20),
+                TextField(
+                  controller: pwd,
+                  decoration: InputDecoration(
+                    hintText: "Enter your password ",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
                 ),
-              ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    onLoginPressed();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 40.0),
+                  ),
+                  child: Text("Login"),
+                ),
+                SizedBox(height: 60),
+              ],
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                onLoginPressed();
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 40.0),
-              ),
-              child: Text("Login"),
-            ),
-          ],
+          ),
         ),
       ),
     );
