@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/Views/Widgets/contsiner_widget.dart';
 import 'package:learn_flutter/Views/Widgets/hero_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,15 +12,8 @@ class HomePage extends StatelessWidget {
       child: Column(
         children: [
           HeroWidget(),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 20),
-            child: Container(
-             width: double.infinity,
-              child: Card(
-                child: Padding(padding: EdgeInsets.all(20), child: Text("Card")),
-              ),
-            ),
-          ),
+         
+           ContainerWidget( title: "Title", desction: "Description",),
         ],
       ),
     );

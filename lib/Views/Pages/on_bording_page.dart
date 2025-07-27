@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/Views/Pages/login_page.dart';
 import 'package:learn_flutter/Views/Widgets/hero_widget.dart';
 
 class OnBordingWidget extends StatelessWidget {
@@ -18,15 +19,17 @@ class OnBordingWidget extends StatelessWidget {
             children: [
               HeroWidget(title: title),
               const SizedBox(height: 20),
+              Text("Flutter map App", style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),),
               FilledButton(
                 onPressed: () {
-                
-                  // Handle button press
+                Navigator.push(context, MaterialPageRoute(builder: (context)  {
+                  return LoginWidget( title: "Register",);
+                }));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 40.0),
                 ),
-                child: Text(title),
+                child: Text("Next ..."),
               ),
               const SizedBox(height: 60),
             ],
