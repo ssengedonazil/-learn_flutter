@@ -55,14 +55,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                   ),
                 ),
                 SizedBox(height: 20),
-                ElevatedButton(
+                FilledButton(
                   onPressed: () {
                     onLoginPressed();
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity, 40.0),
                   ),
-                  child: Text("Login"),
+                  child: Text(widget.title),
                 ),
                 SizedBox(height: 60),
               ],
@@ -75,21 +75,20 @@ class _LoginWidgetState extends State<LoginWidget> {
 
   void onLoginPressed() {
     if (ConfirmEmail == email.text && ConfirmPassword == pwd.text) {
-      Navigator.pushReplacement(
+      // Navigator.pushReplacement(
+      Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
           builder: (context) {
             return WidgetTree();
           },
         ),
+        (route) =>false,
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(
-            "Invalid Credentials",
-            
-          ),
+          content: Text("Invalid Credentials", style: TextStyle(color: Colors.white)),
           backgroundColor: Colors.red,
           duration: Duration(seconds: 1),
           behavior: SnackBarBehavior.floating,

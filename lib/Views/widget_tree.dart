@@ -3,7 +3,9 @@ import 'package:learn_flutter/Views/Pages/home_page.dart';
 import 'package:learn_flutter/Views/Pages/profile.dart';
 import 'package:learn_flutter/Views/Pages/setting_page.dart';
 import 'package:learn_flutter/Views/Widgets/nav_bar_widget.dart';
+import 'package:learn_flutter/data/constants.dart';
 import 'package:learn_flutter/data/notifiers.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 List<Widget> pages = [
   HomePage(),
@@ -20,8 +22,13 @@ String title = 'Learn Flutter';
           actions: [
             IconButton(
               icon: Icon(isDarkModeNotifier.value ? Icons.dark_mode : Icons.light_mode),
-              onPressed: () {
+              onPressed: () async {
                 isDarkModeNotifier.value = !isDarkModeNotifier.value;
+                final SharedPreferences prefs =  await SharedPreferences.getInstance();
+                prefs.setBool(KConstants.themeModeKey, isDarkModeNotifier.value);
+  final bool? isDarkMode = prefs.getBool(KConstants.themeModeKey) ?? false;
+
+
               },
             ),
             IconButton(

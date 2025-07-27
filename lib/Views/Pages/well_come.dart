@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/Views/Pages/login_page.dart';
+import 'package:learn_flutter/Views/Pages/on_bording_page.dart';
 import 'package:learn_flutter/Views/Widgets/hero_widget.dart';
 import 'package:learn_flutter/Views/widget_tree.dart';
 
@@ -27,9 +28,9 @@ class _WellComePageState extends State<WellComePage> {
                 ),
               //  HeroWidget(),
                 FilledButton(onPressed: (){
-                     Navigator.push(context, MaterialPageRoute(builder: (context)  {
-                      return LoginWidget( title: "Register",);
-                    }));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)  {
+                    return OnBordingWidget( title: "Register",);
+                  }));;
                 },
                 style: FilledButton.styleFrom(
                   minimumSize: Size(double.infinity, 40.0)
