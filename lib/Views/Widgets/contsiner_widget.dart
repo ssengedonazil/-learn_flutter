@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ContainerWidget extends StatelessWidget {
-  const ContainerWidget({super.key, required this.title,required this.desction});
+  const ContainerWidget({super.key, required this.title,required this.Description});
 final String title;
-final String desction;
+final String Description;
   @override
   Widget build(BuildContext context) {
     return   Container(
@@ -15,7 +15,7 @@ final String desction;
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(title),
-                    Text(desction)
+                    Text(Description)
                   ],
                 ),),
               ),
