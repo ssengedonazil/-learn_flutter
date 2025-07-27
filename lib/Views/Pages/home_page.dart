@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       child: Column(
         children: [
           HeroWidget(),
-         
+           ContainerWidget( title: "Title", desction: "Description",),
            ContainerWidget( title: "Title", desction: "Description",),
         ],
       ),
