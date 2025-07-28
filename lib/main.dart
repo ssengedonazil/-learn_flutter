@@ -20,8 +20,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    initThemeMode(); 
-    // call your custom method here
+    initThemeMode();  
   }
 
   Future<void> initThemeMode() async {
