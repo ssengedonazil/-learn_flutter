@@ -8,7 +8,7 @@ final String Description;
   Widget build(BuildContext context) {
     return   Container(
              width: double.infinity,
-             padding: EdgeInsets.symmetric( vertical: 1),
+             padding: EdgeInsets.symmetric( vertical: 2),
               child: Card(
                 child: Padding(padding: EdgeInsets.all(20), child: 
                 Column(

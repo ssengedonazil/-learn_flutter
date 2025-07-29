@@ -17,22 +17,32 @@ class HomePage extends StatelessWidget {
       KValue.keyConcepts,
       KValue.basicLayout,
       KValue.cleanUi,
-      KValue.FixBugs
+      KValue.FixBugs,
     ];
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 2.0),
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            HeroWidget(title: "Flutter App", nextPage:CoursePage() ),
-            Column(
-              children: List.generate(
-                list.length,
-                (index) =>
-                    ContainerWidget(title: list[index], Description: "Description"),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            return FractionallySizedBox(
+              widthFactor: constraints.maxWidth < 600 ? 1 : 0.5,
+              child: Column(
+                children: [
+                  SizedBox(height: 10.0),
+                  HeroWidget(title: "Flutter App", nextPage: CoursePage()),
+                  Column(
+                    children: List.generate(
+                      list.length,
+                      (index) => ContainerWidget(
+                        title: list[index],
+                        Description: "Description",
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
+            );
+          }, 
         ),
       ),
     );
