@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/Views/Pages/course_page.dart';
 import 'package:learn_flutter/Views/Widgets/contsiner_widget.dart';
 import 'package:learn_flutter/Views/Widgets/hero_widget.dart';
 import 'package:learn_flutter/data/constants.dart';
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            HeroWidget(),
+            HeroWidget(title: "Flutter App", nextPage:CoursePage() ),
             Column(
               children: List.generate(
                 list.length,
